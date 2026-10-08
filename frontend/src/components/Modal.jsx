@@ -1,0 +1,2 @@
+import { X } from "lucide-react";
+export default function Modal({ children, cerrar, dataTestId }) { return <div className="capa-modal" data-testid={dataTestId}><div className="modal"><button className="boton-icono" data-testid={`${dataTestId}-cerrar`} onClick={cerrar}><X size={18}/></button>{children}</div></div>; }

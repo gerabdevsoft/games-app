@@ -1,0 +1,47 @@
+/* Ajustes finales de identidad Rivero Rector: este archivo se carga después de App.css. */
+.tarjeta-banner {
+  display: block !important;
+  position: relative !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background: #002954 !important;
+}
+
+.tarjeta-banner > img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.tarjeta-banner > div { display: none !important; }
+.tarjeta-banner > svg { display: none !important; }
+
+/* Recursos de campaña incluidos localmente en src/assets. */
+.imagen-garra { background: transparent !important; -webkit-mask: none !important; mask: none !important; mix-blend-mode: normal !important; object-fit: contain !important; }
+.plan-trabajo { color: #18354f; padding-bottom: 18px; }
+.plan-trabajo h2 { color: #002954; font: 800 20px 'Plus Jakarta Sans'; margin: 0 0 12px; }
+.plan-trabajo p, .plan-trabajo li { font-size: 13px; line-height: 1.75; color: #35516a; }
+.plan-mensaje, .plan-formacion, .plan-pilar { border-top: 1px solid #cbdde8; padding: 24px 0; }
+.plan-mensaje p, .plan-formacion p { margin: 0 0 13px; }
+.plan-titulo-propuesta { margin: 24px 0 0 !important; }
+.plan-pilar > span { display: block; color: #57CC02; font: 700 11px 'DM Mono'; text-transform: uppercase; margin-bottom: 6px; }
+.plan-pilar h2 { font-size: 16px; text-transform: uppercase; }
+.plan-pilar ul { margin: 0; padding-left: 20px; }
+.plan-pilar li { margin: 0 0 10px; }
+.plan-cierre { background: #002954; border-bottom: 4px solid #57CC02; color: white; font: 800 17px 'Plus Jakarta Sans'; padding: 25px 20px; text-align: center; margin-top: 12px; }
+.carga-imagen{border:1px dashed #69a23d;border-radius:6px;padding:16px!important;display:flex!important;align-items:center;justify-content:center;gap:8px;color:#397a16;cursor:pointer}.carga-imagen input{display:none}.vista-previa-premio{width:100%;max-height:190px;object-fit:contain;border:1px solid var(--borde);margin:5px 0 15px}.tablero-tres-raya{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:18px 0}.tablero-tres-raya button{aspect-ratio:1;border:1px solid var(--borde);background:#f9fcfd;color:var(--azul);font-size:29px;font-weight:800;border-radius:4px}.tablero-tres-raya button:disabled{opacity:1}.dados-academicos{display:flex;justify-content:center;gap:15px;margin:17px 0}.dados-academicos span{width:74px;height:74px;display:grid;place-items:center;background:#fff;border:2px solid #b9e999;border-radius:9px;color:var(--azul);font-size:48px;box-shadow:0 5px 0 #d9ecd0}
+.buscador-usuarios{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--borde);border-radius:6px;padding:10px;color:#4c8c1b;margin-bottom:10px}.buscador-usuarios input{border:0;outline:0;width:100%;font-size:13px}.resultados-usuarios{border:1px solid var(--borde);background:#fff;border-radius:6px;margin-bottom:14px}.usuario-result{width:100%;display:flex;gap:9px;text-align:left;align-items:center;padding:11px;border:0;border-bottom:1px solid var(--borde);background:#fff;color:var(--azul)}.usuario-result:last-child{border:0}.usuario-result span{display:block;font-size:12px;font-weight:700}.usuario-result small,.estudiante-seleccionado small{display:flex;align-items:center;gap:3px;color:#508016;font-size:10px;margin-top:3px}.usuario-result.seleccionado{background:#eff9e8}.garra-mini{width:14px!important;height:14px!important}.estudiante-seleccionado{background:#edf8e6;border-left:4px solid var(--verde);padding:13px;display:flex;gap:9px;align-items:flex-start;border-radius:4px;margin:14px 0}.estudiante-seleccionado span{display:block;font:700 9px monospace;color:#4b8d18}.estudiante-seleccionado b{display:block;font-size:12px;overflow-wrap:anywhere}.selector-premio{display:block;font-weight:700;font-size:12px;margin:17px 0}.selector-premio select{display:block;width:100%;margin-top:6px;border:1px solid var(--borde);border-radius:5px;padding:11px;background:#fff}
+.form-admin select{display:block;width:100%;margin-top:6px;border:1px solid var(--borde);border-radius:5px;padding:11px;background:#fff}.fila-perfil small{display:inline-block;background:#eaf8df;color:#3f8612;border-radius:10px;padding:2px 7px;margin-left:4px}.lista-usuarios-admin{border-top:1px solid var(--borde)}.fila-usuario-admin{padding:14px 0;border-bottom:1px solid var(--borde);display:flex;gap:10px;align-items:flex-start;color:var(--azul)}.fila-usuario-admin>div{flex:1}.fila-usuario-admin b{display:block;font-size:13px}.fila-usuario-admin span{display:block;font-size:11px;color:#478215;margin:3px 0}.fila-usuario-admin small{display:block;font-size:10px;color:var(--muted);overflow-wrap:anywhere}.fila-usuario-admin strong{font-size:12px;display:flex;gap:3px;align-items:center}.lista-puntos{margin-top:22px}.punto-canje{display:flex;gap:10px;border-top:1px solid var(--borde);padding:13px 0;color:var(--azul)}.punto-canje b,.punto-canje span,.punto-canje small{display:block}.punto-canje b{font-size:13px}.punto-canje span{font-size:12px;margin:4px 0}.punto-canje small{font-size:10px;color:var(--muted)}
+.pantalla-carga{min-height:100vh;display:grid;place-items:center;background:#f4f9fb;color:#002954;font-weight:700}
+.puntos-facultad{border:1px solid var(--borde);border-left:4px solid var(--verde);border-radius:6px;background:#fff;padding:14px;margin-bottom:20px}.encabezado-puntos{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.encabezado-puntos span{font:700 9px monospace;color:#4b8d18}.encabezado-puntos h2{font-size:17px;margin:3px 0}.encabezado-puntos a{display:flex;align-items:center;color:var(--azul);font-size:11px;font-weight:700;text-decoration:none}.punto-estudiante{display:flex;gap:9px;padding:12px 0;border-top:1px solid var(--borde);color:var(--azul)}.punto-estudiante:first-of-type{border-top:0}.punto-estudiante b,.punto-estudiante span,.punto-estudiante small{display:block}.punto-estudiante b{font-size:12px}.punto-estudiante span{font-size:12px;margin:4px 0}.punto-estudiante small{display:flex;align-items:center;gap:3px;color:var(--muted);font-size:10px}.sin-punto{font-size:12px;color:var(--muted);line-height:1.5;margin:6px 0}.lista-puntos-publicos{border-top:1px solid var(--borde)}
+.formulario-acceso select{display:block;width:100%;min-height:42px;margin-top:6px;padding:11px;border:1px solid var(--borde);border-radius:5px;background:#fff;color:var(--texto);font-size:13px}

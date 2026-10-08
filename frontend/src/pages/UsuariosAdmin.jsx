@@ -1,0 +1,8 @@
+import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
+import { Users } from "lucide-react";
+import { toast } from "sonner";
+import MarcoApp from "@/components/MarcoApp";
+import { Garra } from "@/components/Marca";
+import { useSesion } from "@/context/SesionContext";
+export default function UsuariosAdmin(){const {api,usuario,cargandoSesion}=useSesion();const [usuarios,setUsuarios]=useState([]);useEffect(()=>{if(usuario?.rol==="administrador")api.get("/administracion/usuarios/lista").then(r=>setUsuarios(r.data)).catch(()=>toast.error("No se pudo cargar la lista de usuarios."));},[api,usuario]);if(cargandoSesion)return <div className="pantalla-carga" data-testid="cargando-sesion">Cargando sesión…</div>;if(usuario?.rol!=="administrador")return <Navigate to="/perfil"/>;return <MarcoApp><div className="titulo-pagina compacto"><span>COMUNIDAD REGISTRADA</span><h1>{usuarios.length} usuarios.</h1><p>Estudiantes con nombre, facultad y Garras disponibles.</p></div><div className="lista-usuarios-admin" data-testid="lista-usuarios-registrados">{usuarios.map(item=><article key={item.id} className="fila-usuario-admin"><Users size={18}/><div><b>{item.nombre_completo||"Estudiante USFX"}</b><span>{item.facultad||"Facultad pendiente"}</span><small>{item.correo} · CU: {item.cu||"Sin CU"}</small></div><strong><Garra clase="garra-mini"/>{item.saldo}</strong></article>)}</div></MarcoApp>;}

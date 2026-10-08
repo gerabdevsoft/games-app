@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="5" time="1.905" timestamp="2026-10-07T13:14:23.877626+00:00" hostname="agent-env-6cccff33-d8eb-4793-ba1d-fb06cea96de7"><testcase classname="tests.test_feb2026_registro_busqueda_admin" name="test_registro_guarda_y_devuelve_nombre_completo_y_cu" time="0.188"><failure message="assert 422 == 201&#10; +  where 422 = &lt;Response [422]&gt;.status_code">backend/tests/test_feb2026_registro_busqueda_admin.py:98: in test_registro_guarda_y_devuelve_nombre_completo_y_cu
+    assert registro.status_code == 201
+E   assert 422 == 201
+E    +  where 422 = &lt;Response [422]&gt;.status_code</failure></testcase><testcase classname="tests.test_feb2026_registro_busqueda_admin" name="test_registro_repite_cu_devuelve_409" time="0.205"><failure message="assert 422 == 201&#10; +  where 422 = &lt;Response [422]&gt;.status_code">backend/tests/test_feb2026_registro_busqueda_admin.py:126: in test_registro_repite_cu_devuelve_409
+    assert primero.status_code == 201
+E   assert 422 == 201
+E    +  where 422 = &lt;Response [422]&gt;.status_code</failure></testcase><testcase classname="tests.test_feb2026_registro_busqueda_admin" name="test_login_existente_funciona_con_correo_y_contrasena" time="0.169"><failure message="assert 422 == 201&#10; +  where 422 = &lt;Response [422]&gt;.status_code">backend/tests/test_feb2026_registro_busqueda_admin.py:139: in test_login_existente_funciona_con_correo_y_contrasena
+    creado = registrar_estudiante(api_client)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/test_feb2026_registro_busqueda_admin.py:76: in registrar_estudiante
+    assert respuesta.status_code == 201
+E   assert 422 == 201
+E    +  where 422 = &lt;Response [422]&gt;.status_code</failure></testcase><testcase classname="tests.test_feb2026_registro_busqueda_admin" name="test_admin_busca_por_correo_nombre_y_cu" time="0.412"><failure message="assert 422 == 201&#10; +  where 422 = &lt;Response [422]&gt;.status_code">backend/tests/test_feb2026_registro_busqueda_admin.py:149: in test_admin_busca_por_correo_nombre_y_cu
+    creado = registrar_estudiante(api_client, nombre="Nombre QA Busqueda")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/test_feb2026_registro_busqueda_admin.py:76: in registrar_estudiante
+    assert respuesta.status_code == 201
+E   assert 422 == 201
+E    +  where 422 = &lt;Response [422]&gt;.status_code</failure></testcase><testcase classname="tests.test_feb2026_registro_busqueda_admin" name="test_no_admin_no_puede_busqueda_administrativa" time="0.131"><failure message="assert 422 == 201&#10; +  where 422 = &lt;Response [422]&gt;.status_code">backend/tests/test_feb2026_registro_busqueda_admin.py:192: in test_no_admin_no_puede_busqueda_administrativa
+    estudiante = registrar_estudiante(api_client)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend/tests/test_feb2026_registro_busqueda_admin.py:76: in registrar_estudiante
+    assert respuesta.status_code == 201
+E   assert 422 == 201
+E    +  where 422 = &lt;Response [422]&gt;.status_code</failure></testcase></testsuite></testsuites>

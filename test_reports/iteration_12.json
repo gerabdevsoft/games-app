@@ -1,0 +1,45 @@
+{
+  "summary": "Se probaron backend y frontend para facultades, registro, permisos admin/no-admin y puntos de canje. Los flujos solicitados pasaron en esta iteración.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "Navegación directa a /administracion/puntos-canje tras login",
+        "issue": "Se observó falla intermitente en un intento (timeout del selector) al entrar por URL directa; por navegación desde Perfil sí cargó correctamente.",
+        "affected_selectors": [
+          "[data-testid='selector-facultad-punto']"
+        ]
+      }
+    ],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_feb2026_facultades_admin_puntos.py",
+    "/app/test_reports/pytest/pytest_results_iteration12.xml"
+  ],
+  "action_items": [
+    "Revisar guardas de rol en rutas admin para evitar redirecciones prematuras cuando usuario aún hidrata desde token.",
+    "Actualizar o retirar pruebas antiguas que registran usuario sin facultad_id (ya no compatible con contrato actual)."
+  ],
+  "critical_code_review_comments": [
+    "UsuariosAdmin.jsx y PuntosCanje.jsx bloquean con `if(usuario?.rol!==\"administrador\")` y pueden redirigir antes de hidratar usuario en recarga directa.",
+    "No hay manejo de error (.catch) en cargas iniciales de UsuariosAdmin/PuntosCanje; ante 403/errores la UX queda silenciosa."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_feb2026_facultades_admin_puntos.py",
+    "/app/test_reports/iteration_12.json"
+  ],
+  "success_rate": {
+    "backend": "100%",
+    "frontend": "95%"
+  },
+  "seed_data_creation": "Se creó 1 usuario estudiante de prueba vía registro (persistente). No se insertaron puntos de canje persistentes de prueba.",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Backend relevante: 6/6 pruebas nuevas en verde para esta historia. UI validó selector de facultad (17 opciones con placeholder), bloqueo no-admin, botón admin con total, lista con nombre/facultad/CU/Garras y formulario de puntos con 4 campos. Hubo una falla intermitente al abrir puntos por URL directa; por navegación desde perfil funcionó.",
+  "rca of the issue": "RCA probable de intermitencia UI admin: las páginas admin dependen de `usuario` del contexto. En recarga/navegación directa, `usuario` inicia en null hasta `actualizarPerfil()`, y la condición de rol puede redirigir antes de completar hidratación. Mitigación: añadir estado de carga de sesión y evaluar rol solo cuando hidratación concluya. Además, capturar errores en useEffect de llamadas admin."
+}

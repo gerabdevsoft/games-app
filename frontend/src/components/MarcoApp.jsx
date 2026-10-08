@@ -1,0 +1,6 @@
+import { FileText, Gamepad2, Gift, Home, User } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import Marca, { Garra } from "@/components/Marca";
+import { useSesion } from "@/context/SesionContext";
+const enlaces = [["/", Home, "Inicio"], ["/propuestas", FileText, "Propuestas"], ["/juegos", Gamepad2, "Juegos"], ["/premios", Gift, "Premios"], ["/perfil", User, "Perfil"]];
+export default function MarcoApp({ children }) { const { usuario } = useSesion(); return <div className="fondo-app"><div className="app-movil"><header className="cabecera"><Marca/><div className="saldo" data-testid="indicador-saldo"><Garra clase="garra-saldo"/><span>{usuario?.saldo ?? 0}</span></div></header><main className="contenido">{children}</main><nav className="navegacion" data-testid="navegacion-inferior">{enlaces.map(([ruta, Icono, texto]) => <NavLink key={ruta} data-testid={`enlace-navegacion-${texto.toLowerCase()}`} to={ruta} end={ruta === "/"}><Icono size={20}/><span>{texto}</span></NavLink>)}</nav></div></div>; }

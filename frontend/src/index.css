@@ -1,0 +1,4 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html{background:#eef3f5} body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased} ::selection{background:#d8eaf1;color:#0b3c5d}

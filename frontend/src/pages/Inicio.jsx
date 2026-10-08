@@ -1,0 +1,8 @@
+import { ChevronRight } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import MarcoApp from "@/components/MarcoApp";
+import { Garra } from "@/components/Marca";
+import bannerRivero from "@/assets/banner-rivero.jpg";
+import campus from "@/assets/campus-rivero.jpeg";
+import { useSesion } from "@/context/SesionContext";
+export default function Inicio() { const { usuario } = useSesion(); return <MarcoApp><section className="saludo"><span>COMUNIDAD USFX</span><h1>Hola, {usuario?.correo?.split("@")[0] || "estudiante"}.</h1><p>Tu participación construye una universidad más libre.</p></section><section className="hero-propuesta" style={{backgroundImage:`linear-gradient(90deg,rgba(0,41,84,.9),rgba(0,41,84,.35)),url(${campus})`}}><span>PROPUESTA BANDERA</span><h2>Matrícula<br/>Cero</h2><p>Porque el talento merece oportunidades, no barreras.</p><NavLink to="/propuestas">Conocer el plan <ChevronRight size={16}/></NavLink></section><section className="seccion-corta"><div className="titulo-seccion"><span>ACTIVA TU COMUNIDAD</span><h2>Garras de la Visión</h2></div><NavLink data-testid="enlace-ir-juegos" className="tarjeta-juego tarjeta-banner" to="/juegos"><img src={bannerRivero} alt="Participa y gana con Rivero Rector"/></NavLink></section><section className="cinta-vision"><Garra className="garra-cinta"/><span>#NuestraVisión · Ciencia, innovación y nexo productivo</span></section></MarcoApp>; }

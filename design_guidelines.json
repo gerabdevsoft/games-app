@@ -1,0 +1,88 @@
+{
+  "project_title": "Eduardo Rivero Rector - USFX 2026-2030 Campaign PWA",
+  "archetype": "Swiss & High-Contrast Academic Leadership",
+  "design_context": "Mobile-First Progressive Web App (PWA) with Gamified Campaign Ecosystem",
+  "theme": "Light theme with institutional blue accents",
+  "typography": {
+    "heading_font": "Plus Jakarta Sans, sans-serif",
+    "body_font": "Inter, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "hierarchy": {
+      "h1": "text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900",
+      "h2": "text-xl sm:text-2xl font-bold tracking-tight text-slate-900",
+      "h3": "text-lg sm:text-xl font-semibold text-slate-800",
+      "body": "text-sm sm:text-base leading-relaxed text-slate-600",
+      "caption": "text-xs font-medium uppercase tracking-wider text-slate-500"
+    }
+  },
+  "colors": {
+    "primary_institutional_blue": "#0B3C5D",
+    "primary_hover": "#082D47",
+    "accent_gold_sun": "#D97706",
+    "accent_emerald_green": "#059669",
+    "accent_crimson_red": "#DC2626",
+    "background_clean": "#F8FAFC",
+    "surface_white": "#FFFFFF",
+    "border_subtle": "#E2E8F0",
+    "text_dark": "#0F172A",
+    "text_muted": "#64748B"
+  },
+  "key_branding_slogans": [
+    "Universidad libre para todos",
+    "Matrícula Cero",
+    "#NuestraVisión"
+  ],
+  "mascot_identity": {
+    "name": "El Oso",
+    "handle": "@eduardo.rivero.el.oso",
+    "usage": "Integrated in header badges, game branding (Ruleta de El Oso, Trivia Express #NuestraVisión), wallet coin icons, and interactive rewards."
+  },
+  "layout_and_navigation": {
+    "mobile_first": true,
+    "bottom_navigation": [
+      { "label": "Inicio", "icon": "Home", "route": "/" },
+      { "label": "Propuestas", "icon": "FileText", "route": "/propuestas" },
+      { "label": "Juegos", "icon": "Gamepad2", "route": "/juegos" },
+      { "label": "Premios", "icon": "Gift", "route": "/premios" },
+      { "label": "Mi Perfil", "icon": "User", "route": "/perfil" }
+    ],
+    "header": "Top bar featuring 'Eduardo Rivero Rector', official USFX campaign badge, mascot icon 'El Oso', coin balance pill with quick action link, and admin access shortcut."
+  },
+  "image_urls": {
+    "bear_mascot": "https://images.unsplash.com/photo-1666158589193-f73d7c0f289c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwxfHxiZWFyJTIwbWFzY290JTIwY3V0ZSUyMGVkaXRvcmlhbCUyMHN0aWNrZXJ8ZW58MHx8fHwxNzkxMjE5NTY4fDA&ixlib=rb-4.1.0&q=85",
+    "campus_hero": "https://images.unsplash.com/photo-1618255630366-f402c45736f6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHx1bml2ZXJzaXR5JTIwY2FtcHVzJTIwYnVpbGRpbmclMjBoaXN0b3JpYyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3OTEyMTk1Njh8MA&ixlib=rb-4.1.0&q=85",
+    "students_community": "https://images.unsplash.com/photo-1758270704524-596810e891b5",
+    "university_building": "https://images.unsplash.com/photo-1562774053-701939374585?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzJTIwYnVpbGRpbmclMjBoaXN0b3JpYyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3OTEyMTk1Njh8MA&ixlib=rb-4.1.0&q=85"
+  },
+  "interactive_games": {
+    "ruleta_50_50": {
+      "title": "La Ruleta de El Oso",
+      "mechanism": "50/50 color selection (Azul / Dorado), bet coins, x2 payout on win, x0 on loss.",
+      "visuals": "Animated CSS conic-gradient wheel with smooth spin-to-stop rotation, victory confetti sound and animations."
+    },
+    "trivia_express": {
+      "title": "Trivia Express #NuestraVisión",
+      "mechanism": "5 questions in 10-second fast round regarding campaign proposals, university history, and science innovation. Correct answers yield x1.5 coins multiplier.",
+      "visuals": "10-second radial progress timer bar, instant tactile haptic-style feedback, score recap popup."
+    }
+  },
+  "accessibility_and_testing": {
+    "data_testid_rule": "All interactive buttons, input fields, navigation links, game controls, and balance indicators MUST include a explicit data-testid attribute in kebab-case format.",
+    "examples": [
+      "data-testid=\"login-submit-button\"",
+      "data-testid=\"user-balance-pill\"",
+      "data-testid=\"ruleta-spin-button\"",
+      "data-testid=\"trivia-answer-0\"",
+      "data-testid=\"reward-claim-button-1\"",
+      "data-testid=\"admin-add-reward-button\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a mobile-first responsive PWA layout with a polished bottom navigation bar for quick access on smartphones.",
+    "Implement real JWT authentication on FastAPI with passlib (bcrypt) and PyJWT. Support both regular student user registration/login and seed an admin account.",
+    "Implement atomic MongoDB operations for balance deductions and payouts to guarantee zero race conditions during roulette spins and trivia reward claims.",
+    "Maintain high visual standard using institutional blue #0B3C5D, crisp white cards, smooth glassmorphic header blur, and distinct mascot integration for El Oso.",
+    "Ensure the admin panel allows adding, editing, and deleting rewards dynamically, initial state starting with empty or manageable rewards list as specified.",
+    "Add 'data-testid' attributes to all essential UI components."
+  ]
+}
